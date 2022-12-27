@@ -1,0 +1,4 @@
+FROM openjdk:latest
+WORKDIR /app
+COPY ./target/classes/ .
+CMD ["java", "ru/kazimir/docker/app/App1"]

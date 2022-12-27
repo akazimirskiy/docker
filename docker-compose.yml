@@ -1,0 +1,6 @@
+version: '1'
+services:
+  app1:
+    build: ./app1
+  app2:
+    build: ./app2
