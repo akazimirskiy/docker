@@ -1,4 +1,5 @@
 FROM openjdk:latest
+MAINTAINER Alexander Kazimirskiy <alexander.kazimirsky@gmail.com>
 WORKDIR /app
 COPY ./target/classes/ .
 CMD ["java", "ru/kazimir/docker/app/App2"]

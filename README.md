@@ -2,6 +2,16 @@
 
 Sample demo application of docker compose.
 
+runs:
+1. a Sample Web App over tomcat using saravak/tomcat8 image in docker container (http://localhost:8081/SampleWebApp/)
+2. app1 - java app
+3. app2 - java app
+4. Terraform - terraform image
+
+Add environmet variables with your AWS credential:
+    ${AWS_ACCESS_KEY_ID}
+    ${AWS_SECRET_ACCESS_KEY}
+    ${AWS_REGION}
 run: "docker compose up" in root project directory
 
 It will build two images and run them.

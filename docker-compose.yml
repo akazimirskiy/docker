@@ -1,5 +1,44 @@
-version: '1'
+version: "1"
 services:
+  jenkins:
+      build:
+        context: jenkins
+        dockerfile: dockerfile
+      volumes:
+        - $PWD/jenkins/.stuff:/var/jenkins_home
+        - $PWD/jenkins:/app
+      ports:
+        - 8080:8080
+  #environment:
+  #  AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+  #  AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+  #  AWS_REGION: "${AWS_REGION}"
+  aws:
+    image: banst/awscli
+    working_dir: /app
+    volumes:
+      - $PWD/:/app
+    env_file: .env
+  terraform:
+    build:
+      dockerfile: Dockerfile
+      context: terraform
+    environment:
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_REGION: "${AWS_REGION}"
+      #env_file: .env
+    volumes:
+      - $PWD/terraform:/app
+    working_dir: /app
+  terraform1:
+    build:
+      context: terraform
+      dockerfile: Dockerfile
+  webapp:
+    image: saravak/tomcat8
+    ports:
+      - "8081:8080"
   app1:
     build: ./app1
   app2:

@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build app') {
+            steps {
+                sh "$PWD/scripts/build.sh"
+            }
+        }
+        stage('Test app') {
+            steps {
+                sh "$PWD/scripts/test.sh"
+            }
+        }
+        stage('Deploy app') {
+            steps {
+                sh "$PWD/scripts/deploy.sh"
+            }
+        }
+    }
+}

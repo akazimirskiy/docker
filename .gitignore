@@ -24,3 +24,5 @@ hs_err_pid*
 /.idea/
 /app1/target/
 /app2/target/
+/jenkins/.stuff/
+/terraform/.terraform/

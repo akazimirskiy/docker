@@ -1,0 +1,3 @@
+workflow-aggregator #jenkins pipelines as code
+seed #look for jenkins files through the projects and import them
+git #work with git
