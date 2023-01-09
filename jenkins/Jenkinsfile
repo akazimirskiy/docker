@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build app') {
             steps {
-                sh "jenkins/scripts/build.sh"
+                sh "scripts/build.sh"
             }
         }
         stage('Test app') {
             steps {
-                sh "jenkins/scripts/test.sh"
+                sh "scripts/test.sh"
             }
         }
         stage('Deploy app') {
             steps {
-                sh "jenkins/scripts/deploy.sh"
+                sh "scripts/deploy.sh"
             }
         }
     }
