@@ -28,6 +28,11 @@ resource "aws_s3_bucket" "website" {
     index_document = "index.html"   // The root of the website.
     //error_document = "error.html"   // The page to show when people hit invalid pages.
   }
+//  for_each = fileset("myfiles/", "*")
+//  bucket = aws_s3_bucket.b1.id
+//  key = each.value
+//  source = "myfiles/${each.value}"
+//  etag = filemd5("myfiles/${each.value}")
 }
 
 output "website_bucket_url" {

@@ -26,3 +26,4 @@ hs_err_pid*
 /app2/target/
 /jenkins/.stuff/
 /terraform/.terraform/
+/.env
